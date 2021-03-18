@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Jan",
+    "mail": "jan@email.com",
+    "phone": "0235486729",
+    "shirts": [
+      {
+        "name": "design-1",
+        "fitting": "man",
+        "size": "L",
+        "color": "#27262B",
+        "text": "I don't sleep. I code."
+      },
+      {
+        "name": "design-2",
+        "fitting": "man",
+        "size": "L",
+        "color": "olive",
+        "text": "I don't sleep. I code."
+      }
+    ]
+  }
+]
