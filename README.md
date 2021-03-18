@@ -100,16 +100,23 @@ Now you can open http://localhost:<PORT>/ in your browser (with the port that is
 
 The sources I've used to create this application:
 
-**Frontend Code:**
+### Frontend code:
 
 -
-- **Backend Code:**
+
+### Backend code:
+
+#### Packages:
 
 - express-ejs-layouts (2.5.0). (2018). [Layout support for ejs in express.]. npmjs. https://www.npmjs.com/package/express-ejs-layouts
 - express (4.17.1). (2019). [Fast, unopinionated, minimalist web framework for node.]. npmjs. https://www.npmjs.com/package/express
 - ejs (3.1.6). (2021). [Embedded JavaScript template ejs.]. npmjs. https://www.npmjs.com/package/ejs
 - body-parser (1.19.0). (2019). [Parse incoming request bodies in a middleware before your handlers, available under the req.body property.]. npmjs. https://www.npmjs.com/package/body-parser
 - nodemon (2.0.7). (2021). [Nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.]. npmjs. https://www.npmjs.com/package/nodemon
+
+#### Saving data:
+
+- The Coding Train. (2016, 18 november). 8.5: Saving Data to JSON File with Node.js - Programming with Text [Video]. YouTube. https://www.youtube.com/watch?v=6iZiqQZBQJY
 
 ## :lock: License
 
