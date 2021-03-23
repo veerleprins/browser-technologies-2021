@@ -9,7 +9,7 @@
       <ul>
         <% shirts.forEach((shirt) => { %>
         <li>
-          <a href="/design">
+          <a href="/design/<%= shirt.key%>">
             <h3><%= shirt.name %></h3>
             <svg
               width="307"
@@ -142,11 +142,12 @@
                 stroke-linejoin="round"
               />
             </svg>
+            <p><%= shirt.text %></p>
           </a>
         </li>
         <% }) %>
       </ul>
-      <form action="/design" method="POST">
+      <form action="/design/" method="POST">
         <button>Design new shirt!</button>
       </form>
     </section>
