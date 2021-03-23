@@ -7,7 +7,7 @@ const app = express();
 const routes = require("./src/routes/router");
 
 // Internals
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5500;
 
 // Middleware
 app.use(express.static("static"));

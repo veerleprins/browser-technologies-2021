@@ -1,4 +1,4 @@
-// Internal
+// Externals
 let fs = require("fs");
 
 const home = async (req, res, next) => {

@@ -37,10 +37,12 @@ There were a number of requirements that had to be incorporated into the applica
 
 The live link to my web application can be found below:
 
+https://get-nerdy.herokuapp.com/
+
 ## :wavy_dash: Flow
 
 First, a wireflow was drawn to see how the application would work in the 'perfect' environment:
-< Here the image >
+<img width="600" alt="Drawn flow of the application." src="https://user-images.githubusercontent.com/35265583/112224970-5d7f3700-8c2c-11eb-9b55-4034a6f8f9c0.jpg">
 
 ## :small_orange_diamond: Browser Technologies
 
@@ -53,8 +55,22 @@ The following browser technologies have been chosen for this web application:
 
 The APIs used for this are:
 
--
--
+- localStorage
+- Validation
+
+### :link: Browser tests
+
+The browsers used for this are:
+
+**Browser Desktop:**
+
+- Brave
+- Firefox
+
+**Browser Mobile:**
+
+- Safari iOs mobile
+- Android Chrome
 
 ## :arrow_down: Install
 
