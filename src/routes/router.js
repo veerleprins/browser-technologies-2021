@@ -6,15 +6,10 @@ const urlencodedParser = bodyParser.urlencoded({ extended: true });
 
 // Functions
 const home = require("./renders/home");
-const create = require("./renders/create");
 const design = require("./renders/design");
 const error = require("./renders/error");
 
 // Routes
-router
-  .get("/", home)
-  .get("/design/:id", design)
-  .post("/design/id", urlencodedParser, create)
-  .get("/*", error);
+router.get("/", home).get("/design/:id", design).get("/*", error);
 
 module.exports = router;
