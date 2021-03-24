@@ -6,6 +6,7 @@
     </header>
     <section>
       <h2>Your designs:</h2>
+      <a href="/design/<%= orderNumber %>">Design new Shirt</a>
       <ul>
         <% shirts.forEach((shirt) => { %>
         <li>
@@ -147,9 +148,6 @@
         </li>
         <% }) %>
       </ul>
-      <form action="/design/" method="POST">
-        <button>Design new shirt!</button>
-      </form>
     </section>
   </main>
   <%- include ("partials/footer.ejs") %>
