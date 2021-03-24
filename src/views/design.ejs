@@ -141,9 +141,9 @@
     <section>
       <form action="/" method="POST">
         <fieldset>
-          <legend>Fitting:</legend>
+          <legend>Fitting</legend>
           <input type="radio" name="fitting" value="man" id="man" checked />
-          <label for="man">Man</label>
+          <label for="man"> Man </label>
           <input type="radio" name="fitting" value="woman" id="woman" />
           <label for="woman">Woman</label>
         </fieldset>
@@ -160,7 +160,7 @@
           </select>
         </fieldset>
         <fieldset>
-          <legend>Color</legend>
+          <legend>T-shirt color</legend>
           <label for="color">Choose a color:</label>
           <select id="color">
             <option value="black">Black</option>
@@ -171,8 +171,20 @@
           </select>
         </fieldset>
         <fieldset>
-          <label for="textInput"></label>
+          <legend>Text input</legend>
+          <label for="textInput">Create a text:</label>
           <input type="text" id="textInput" placeholder="Your text here..." />
+        </fieldset>
+        <fieldset>
+          <legend>Text color</legend>
+          <label for="textColor">Choose a color for the text:</label>
+          <select id="textColor">
+            <option value="black">Black</option>
+            <option value="white">White</option>
+            <option value="olive">Olive</option>
+            <option value="asphalt">Asphalt</option>
+            <option value="navy">Navy</option>
+          </select>
         </fieldset>
         <button>Buy</button>
       </form>
