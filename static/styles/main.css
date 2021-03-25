@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+}
+
+html {
+  background-color: white;
+  color: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "Inter", sans-serif;
+}
+@supports (display: flex) {
+  body > header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  body > header > a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  body > header nav ul {
+    display: flex;
+    align-items: center;
+  }
+
+  body > header nav ul li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+}
+
+body > header {
+  background-color: white;
+  border-bottom: solid 1px #735dfe45;
+  height: 100px;
+  padding: 0.5em 5vw;
+}
+
+body > header > a {
+  width: 100px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+body > header nav ul {
+  height: 80px;
+}
+
+body > header nav ul li {
+  list-style-type: none;
+}
+
+body > header nav ul li a {
+  text-decoration: none;
+}
+
+body > header nav ul li a svg {
+  margin-bottom: 2px;
+}
+
+main {
+  padding: 10vw;
+}
+
+.button {
+  width: 200px;
+  height: 100px;
+}
+
+.button a {
+  background-color: #3e23e5;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+/*******************************************************
+                  INDEX PAGE:
+********************************************************/
+
+@supports (display: flex) {
+  .home main > header {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+/*******************************************************
+                  DESIGN PAGE:
+********************************************************/
+
+@supports (display: flex) {
+  .design main div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 1080px) {
+  .design main div {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

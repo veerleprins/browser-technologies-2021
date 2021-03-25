@@ -6,7 +6,9 @@
     </header>
     <section>
       <h2>Your designs:</h2>
-      <a href="/design/<%= orderNumber %>">Design new Shirt</a>
+      <div class="button">
+        <a href="/design/<%= orderNumber %>">Design new Shirt</a>
+      </div>
       <ul>
         <% shirts.forEach((shirt) => { %>
         <li>
