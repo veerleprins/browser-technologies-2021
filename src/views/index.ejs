@@ -6,12 +6,14 @@
     </header>
     <section>
       <h2>Your designs:</h2>
-      <a href="/design/<%= orderNumber %>">Design new Shirt</a>
+      <div class="button">
+        <a href="/design/<%= orderNumber %>">Design new Shirt</a>
+      </div>
       <ul>
         <% shirts.forEach((shirt) => { %>
         <li>
           <a href="/design/<%= shirt.key%>">
-            <h3><%= shirt.name %></h3>
+            <h3>Design name: <%= shirt.name %></h3>
             <svg
               width="307"
               height="402"
