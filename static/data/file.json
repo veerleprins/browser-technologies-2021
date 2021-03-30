@@ -5,12 +5,33 @@
     "phone": "0235486729",
     "shirts": [
       {
-        "key": "sktwintlkmnil933",
-        "name": "design-1",
+        "key": "sktwi1n7ekmwc4f0um",
+        "price": "21,95",
         "fitting": "man",
-        "size": "L",
+        "size": "xl",
         "color": "olive",
-        "text": "I <code/> my way trough life."
+        "text": "Techno house",
+        "textColor": "white"
+      }
+    ],
+    "cart": [
+      {
+        "key": "sktwi1mz0kmwa60fiw",
+        "price": "19,99",
+        "fitting": "woman",
+        "size": "s",
+        "color": "#253095",
+        "text": "Techno music",
+        "textColor": "white"
+      },
+      {
+        "key": "sktwi1mzukmwaa4j7m",
+        "price": "21,95",
+        "fitting": "man",
+        "size": "xs",
+        "color": "#383838",
+        "text": "",
+        "textColor": "black"
       }
     ]
   }

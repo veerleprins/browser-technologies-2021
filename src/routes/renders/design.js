@@ -5,6 +5,14 @@ const design = async (req, res, next) => {
   try {
     // Internals:
     const ID = req.params.id;
+    let newDesign = {
+      key: ID,
+      price: "",
+      fitting: "man",
+      size: "",
+      color: "#FFFFFF",
+      text: "",
+    };
 
     // Reading the file
     const file = fs.readFileSync("./static/data/file.json");
@@ -16,14 +24,17 @@ const design = async (req, res, next) => {
       shirt = shirt;
     } else {
       // Create new Object
-      const newDesign = {
-        key: ID,
-        name: "",
-        fitting: "",
-        size: "",
-        color: "#27262B",
-        text: "",
-      };
+      if (ID.endsWith("m")) {
+        newDesign.fitting = "man";
+        newDesign.price = "21,95";
+      } else if (ID.endsWith("w")) {
+        newDesign.fitting = "woman";
+        newDesign.price = "19,99";
+      } else {
+        newDesign.fitting = "unisex";
+        newDesign.price = "24,95";
+      }
+
       // Adding object to users array
       users.forEach((user) => {
         user.shirts.push(newDesign);

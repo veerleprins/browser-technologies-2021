@@ -2,7 +2,7 @@
 let fs = require("fs");
 const uniqid = require("uniqid");
 
-const home = async (req, res, next) => {
+const designs = async (req, res, next) => {
   try {
     // Create new ID if user want to create shirt:
     const orderNumber = uniqid();
@@ -12,8 +12,8 @@ const home = async (req, res, next) => {
     const users = await Array.from(JSON.parse(file));
 
     // Rendering the page:
-    res.render("index.ejs", {
-      pageTitle: "Home",
+    res.render("designs.ejs", {
+      pageTitle: "Designs",
       shirts: users[0].shirts,
       orderNumber: orderNumber,
     });
@@ -22,4 +22,4 @@ const home = async (req, res, next) => {
   }
 };
 
-module.exports = home;
+module.exports = designs;
