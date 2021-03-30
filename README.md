@@ -1,5 +1,8 @@
 # Browser Technologies
 
+![iPhone 8 White Mockup](https://user-images.githubusercontent.com/35265583/113010211-f3f5b000-9178-11eb-90e3-89d18b2c9e7c.png) ![iPad Pro (12 9 Inch) Mockup](https://user-images.githubusercontent.com/35265583/113010208-f35d1980-9178-11eb-9cec-39f0c3e707da.png)
+![Macbook Pro Tilted Screen Mockup](https://user-images.githubusercontent.com/35265583/113010791-69618080-9179-11eb-8e78-3b6bfb833f66.png)
+
 ## :black_nib: Short Description
 
 During the course _browser technologies_ within the CMD minor Web Design & Development, we learn to code using browser techniques with progressive enhancement in mind. It explains what progressive enhancement entails and how this way of thinking can be applied while building any application. Furthermore, a number of cases were given in which one specific case was chosen to get started with self-selected browser techniques that would match the case.
@@ -46,10 +49,33 @@ First, a wireflow was drawn to see how the application would work in the 'perfec
 
 ## :small_orange_diamond: Browser Technologies
 
-The following browser technologies have been chosen for this web application:
+### Progressive enhancement
 
--
--
+The purpose of the user:
+
+> Designing and ordering a nerdy T-shirt.
+
+**Functional:**
+
+- The forms work through the server.
+- Structured HTML according to HTML5 semantics.
+- The user can achieve their goal, but it is not the most pleasant and enjoyable experience.
+
+**Reliable:**
+
+- Basic validation via the server works.
+- The user cannot make small mistakes while filling in the form.
+
+- **Usable:**
+
+- The CSS makes it easier for the user to fill in the form.
+- It is easier for the user to see the designed shirts through the design layout.
+
+**Pleasurable:**
+
+- The user immediately sees what the shirt will look like because the text & print is displayed on the shirt while designing.
+- The form is structured per step (progressive disclosure) so that the user does not have to fill in an entire form at once.
+- The user input is saved in between so that the user can exit the page and come back again.
 
 ### :link: Browser API's
 
@@ -62,15 +88,10 @@ The APIs used for this are:
 
 The browsers used for this are:
 
-**Browser Desktop:**
-
-- Brave
-- Firefox
-
-**Browser Mobile:**
-
-- Safari iOs mobile
-- Android Chrome
+- Brave (Desktop)
+- Firefox (Desktop)
+- Safari iOs mobile (Mobile)
+- Android Chrome (Mobile)
 
 ## :arrow_down: Install
 
@@ -110,7 +131,7 @@ Go to the repository in the terminal and add the following line of code below:
 
 `node server.js`
 
-Now you can open http://localhost:<PORT>/ in your browser (with the port that is being given) to view the application! :raised_hands:
+Now you can open http://localhost:PORT/ in your browser (with the port that is being given) to view the application! :raised_hands:
 
 ## :books: Sources
 
@@ -118,7 +139,25 @@ The sources I've used to create this application:
 
 ### Frontend code:
 
--
+- <!--
+  https://www.youtube.com/watch?v=k8yJCeuP6I8&t=371s
+  https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_oninput
+  https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection
+  https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API
+  https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+  https://stackoverflow.com/questions/4230375/whats-the-easiest-way-to-remove-fieldset-border-lines/4230381
+  https://css-tricks.com/accessible-svgs/
+  https://stackoverflow.com/questions/2918707/turn-off-iphone-safari-input-element-rounding
+  https://css-tricks.com/separate-form-submit-buttons-go-different-urls/
+  https://www.w3schools.com/tags/att_input_type_hidden.asp
+  https://flaviocopes.com/how-to-uppercase-first-letter-javascript/
+  https://fsymbols.com/heart/#apple
+  https://attacomsian.com/blog/javascript-convert-nodelist-to-array
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
+  https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+  https://stackoverflow.com/questions/2010892/storing-objects-in-html5-localstorage
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
+   -->
 
 ### Backend code:
 
@@ -136,14 +175,6 @@ The sources I've used to create this application:
 
 ## :lock: License
 
-This repo is licensed as [MIT]() by :copyright: [Veerle Prins](https://github.com/veerleprins), 2020
-
-<!-- Add a link to your live demo in Github Pages 🌐-->
-
-<!-- replace the code in the /docs folder with your own, so you can showcase your work with GitHub Pages 🌍 -->
-
-<!-- Add a nice poster image here at the end of the week, showing off your shiny frontend 📸 -->
+This repo is licensed as [MIT](https://github.com/veerleprins/browser-technologies-2021/blob/master/LICENSE) by :copyright: [Veerle Prins](https://github.com/veerleprins), 2020
 
 <!-- ...but how does one use this project? What are its features 🤔 -->
-
-<!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
