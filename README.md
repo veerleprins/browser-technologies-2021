@@ -66,7 +66,7 @@ The purpose of the user:
 - Basic validation via the server works.
 - The user cannot make small mistakes while filling in the form.
 
-- **Usable:**
+**Usable:**
 
 - The CSS makes it easier for the user to fill in the form.
 - It is easier for the user to see the designed shirts through the design layout.
@@ -74,7 +74,6 @@ The purpose of the user:
 **Pleasurable:**
 
 - The user immediately sees what the shirt will look like because the text & print is displayed on the shirt while designing.
-- The form is structured per step (progressive disclosure) so that the user does not have to fill in an entire form at once.
 - The user input is saved in between so that the user can exit the page and come back again.
 
 ### :link: Browser API's
@@ -139,6 +138,14 @@ The sources I've used to create this application:
 
 ### Frontend code:
 
+- Oriol. (2014, 5 mei). Check if string contains only letters in javascript [StackOverflow post]. Stack Overflow. https://stackoverflow.com/questions/23476532/check-if-string-contains-only-letters-in-javascript
+- MDN. (2021, 19 februari). String.prototype.endsWith() - JavaScript | MDN. MDN Docs. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
+- Salvadó, C. C. [christian-c-salvadó]. (2010, 6 januari). Storing Objects in HTML5 localStorage [StackOverflow post]. Stack Overflow. https://stackoverflow.com/questions/2010892/storing-objects-in-html5-localstorage
+- MDN. (2021b, februari 19). Window.localStorage - Web APIs | MDN. MDN Docs. https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+- MDN. (2021a, februari 19). Array.from() - JavaScript | MDN. MDN Docs. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
+- fsymbols. (z.d.). ♡ ♥💕❤😘 Heart Symbol - copy love emoji. Geraadpleegd op 29 maart 2021, van https://fsymbols.com/heart/#apple
+- Copes, F. (2019, 27 mei). How to uppercase the first letter of a string in JavaScript. Flaviocopes. https://flaviocopes.com/how-to-uppercase-first-letter-javascript/
+
 - <!--
   https://www.youtube.com/watch?v=k8yJCeuP6I8&t=371s
   https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_oninput
@@ -150,13 +157,6 @@ The sources I've used to create this application:
   https://stackoverflow.com/questions/2918707/turn-off-iphone-safari-input-element-rounding
   https://css-tricks.com/separate-form-submit-buttons-go-different-urls/
   https://www.w3schools.com/tags/att_input_type_hidden.asp
-  https://flaviocopes.com/how-to-uppercase-first-letter-javascript/
-  https://fsymbols.com/heart/#apple
-  https://attacomsian.com/blog/javascript-convert-nodelist-to-array
-  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
-  https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
-  https://stackoverflow.com/questions/2010892/storing-objects-in-html5-localstorage
-  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
    -->
 
 ### Backend code:
@@ -177,4 +177,10 @@ The sources I've used to create this application:
 
 This repo is licensed as [MIT](https://github.com/veerleprins/browser-technologies-2021/blob/master/LICENSE) by :copyright: [Veerle Prins](https://github.com/veerleprins), 2020
 
-<!-- ...but how does one use this project? What are its features 🤔 -->
+<!--
+https://www.freecodecamp.org/news/check-if-javascript-array-is-empty-or-not-with-length/#:~:text=To%20check%20if%20an%20array,it%20is%20empty%20or%20not.
+
+https://github.com/cmda-minor-web/browser-technologies-2021/blob/master/course/Eindopdracht.md#criteria
+
+https://github.com/Coenmathijssen/browser-technologies-1920
+ -->
