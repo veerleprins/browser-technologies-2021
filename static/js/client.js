@@ -1,136 +1,295 @@
-const body = document.querySelector("body");
-const designPage = window.location.pathname.includes("/designs/");
-const designs = window.location.pathname.endsWith("/designs");
-const cartPage = window.location.pathname.endsWith("/cart");
+const init = () => {
+  const designPage = window.location.pathname.includes("/designs/");
+  const cartPage = window.location.pathname.endsWith("/cart");
+  if (designPage && document.querySelector && localStorage && location) {
+    // Getting the elements:
+    const textInput = document.querySelector("#textInput");
+    const selectInput = document.querySelector("#color");
+    const selectInputText = document.querySelector("#textColor");
+    const shirt = document.querySelector(".shirt");
+    const paragraph = document.querySelector("#liveInput");
+    const size = document.querySelector("#size");
+    const shirtColor = document.querySelector("#color");
+    const inputText = document.querySelector("#textInput");
+    const textColor = document.querySelector("#textColor");
+    const key = location.pathname.replace("/designs/", "");
 
-if (designPage && document.querySelector) {
-  // Getting the elements:
-  const textInput = document.querySelector("#textInput");
-  const selectInput = document.querySelector("#color");
-  const selectInputText = document.querySelector("#textColor");
-  const shirt = document.querySelector(".shirt");
-  const paragraph = document.querySelector("#liveInput");
+    // Adding classes:
+    paragraph.classList.add("onShirt");
 
-  // Adding classes:
-  paragraph.classList.add("onShirt");
+    // Adding events:
+    selectInputText.addEventListener("change", (e) => {
+      let userInput = e.target.value;
+      removeClasses(["colorBlack", "colorWhite"], paragraph);
+      checkShirtColor(userInput, paragraph);
+    });
 
-  // Adding events:
-  selectInputText.addEventListener("change", (e) => {
-    let userInput = e.target.value;
-    removeClasses(["colorBlack", "colorWhite"], paragraph);
-    checkShirtColor(userInput, paragraph);
-  });
+    selectInput.addEventListener("change", (e) => {
+      let userInput = e.target.value;
+      removeClasses(
+        ["colorOlive", "colorWhite", "colorBlack", "colorNavy"],
+        shirt
+      );
+      checkShirtColor(userInput, shirt);
+    });
 
-  selectInput.addEventListener("change", (e) => {
-    let userInput = e.target.value;
-    removeClasses(
-      ["colorOlive", "colorWhite", "colorBlack", "colorNavy"],
-      shirt
-    );
-    checkShirtColor(userInput, shirt);
-  });
+    textInput.onkeyup = function () {
+      paragraph.innerHTML = this.value;
+    };
 
-  textInput.onkeyup = function () {
-    paragraph.innerHTML = this.value;
-  };
-}
+    if (localStorage.getItem(`${key}`)) {
+      let retrievedObject = JSON.parse(localStorage.getItem(`${key}`));
+      size.value = retrievedObject.size;
+      inputText.value = retrievedObject.inputText;
+      shirtColor.value = retrievedObject.shirtColor;
+      textColor.value = retrievedObject.textColor;
+      checkShirtColor(shirtColor.value, shirt);
+      checkShirtColor(textColor.value, paragraph);
+      paragraph.innerHTML = retrievedObject.inputText;
+    } else {
+      const object = createObject(
+        size.value,
+        shirtColor.value,
+        inputText.value,
+        textColor.value
+      );
+      // Put the object into storage
+      localStorage.setItem(`${key}`, JSON.stringify(object));
+    }
 
-if (designPage && document.querySelector && localStorage && location) {
-  // localStorage.clear();
-  console.log(localStorage);
-  // Getting the elements:
-  const shirt = document.querySelector(".shirt");
-  const paragraph = document.querySelector("#liveInput");
-  const size = document.querySelector("#size");
-  const shirtColor = document.querySelector("#color");
-  const inputText = document.querySelector("#textInput");
-  const textColor = document.querySelector("#textColor");
-  const key = location.pathname.replace("/designs/", "");
+    // Event listeners:
+    size.addEventListener("change", function (e) {
+      // Get user input:
+      let userInput = e.target.value;
+      // Add user input to object in localStorage:
+      let obj = JSON.parse(localStorage.getItem(`${key}`));
+      obj.size = userInput;
+      localStorage.setItem(`${key}`, JSON.stringify(obj));
+      // Update DOM:
+      let getObj = JSON.parse(localStorage.getItem(`${key}`));
+      size.value = getObj.size;
+    });
 
-  if (localStorage.getItem(`${key}`)) {
-    console.log("Does exist.");
-    let retrievedObject = JSON.parse(localStorage.getItem(`${key}`));
-    size.value = retrievedObject.size;
-    inputText.value = retrievedObject.inputText;
-    shirtColor.value = retrievedObject.shirtColor;
-    textColor.value = retrievedObject.textColor;
-    checkShirtColor(shirtColor.value, shirt);
-    checkShirtColor(textColor.value, paragraph);
-    paragraph.innerHTML = retrievedObject.inputText;
-  } else {
-    console.log("Does not exist.");
-    const object = createObject(
-      size.value,
-      shirtColor.value,
-      inputText.value,
-      textColor.value
-    );
-    // Put the object into storage
-    localStorage.setItem(`${key}`, JSON.stringify(object));
+    shirtColor.addEventListener("change", function (e) {
+      // Get user input:
+      let userInput = e.target.value;
+      // Add user input to object in localStorage:
+      let obj = JSON.parse(localStorage.getItem(`${key}`));
+      obj.shirtColor = userInput;
+      localStorage.setItem(`${key}`, JSON.stringify(obj));
+      // Update DOM:
+      let getObj = JSON.parse(localStorage.getItem(`${key}`));
+      shirtColor.value = getObj.shirtColor;
+    });
+
+    textColor.addEventListener("change", function (e) {
+      // Get user input:
+      let userInput = e.target.value;
+      // Add user input to object in localStorage:
+      let obj = JSON.parse(localStorage.getItem(`${key}`));
+      obj.textColor = userInput;
+      localStorage.setItem(`${key}`, JSON.stringify(obj));
+      // Update DOM:
+      let getObj = JSON.parse(localStorage.getItem(`${key}`));
+      textColor.value = getObj.textColor;
+    });
+
+    inputText.addEventListener("change", function (e) {
+      // Get user input:
+      let userInput = e.target.value;
+      // Add user input to object in localStorage:
+      let obj = JSON.parse(localStorage.getItem(`${key}`));
+      obj.inputText = userInput;
+      localStorage.setItem(`${key}`, JSON.stringify(obj));
+      // Update DOM:
+      let getObj = JSON.parse(localStorage.getItem(`${key}`));
+      inputText.value = getObj.inputText;
+      paragraph.innerHTML = getObj.inputText;
+    });
   }
-  // console.log(localStorage);
-  // localStorage.clear();
+  if (cartPage && document.querySelector && localStorage) {
+    // Get elements:
+    const keys = document.querySelectorAll(".keys");
+    const keysList = Array.from(keys);
+    const name = document.querySelector("#userName");
+    const phone = document.querySelector("#userPhone");
+    const mail = document.querySelector("#userMail");
 
-  // Event listeners:
-  size.addEventListener("change", function (e) {
-    // Get user input:
-    let userInput = e.target.value;
-    // Add user input to object in localStorage:
-    let obj = JSON.parse(localStorage.getItem(`${key}`));
-    obj.size = userInput;
-    localStorage.setItem(`${key}`, JSON.stringify(obj));
-    // Update DOM:
-    let getObj = JSON.parse(localStorage.getItem(`${key}`));
-    size.value = getObj.size;
-  });
+    keysList.forEach((input) => {
+      let key = input.value;
+      let obj = JSON.parse(localStorage.getItem(`${key}`));
+      localStorage.removeItem(`${key}`, JSON.stringify(obj));
+    });
 
-  shirtColor.addEventListener("change", function (e) {
-    // Get user input:
-    let userInput = e.target.value;
-    // Add user input to object in localStorage:
-    let obj = JSON.parse(localStorage.getItem(`${key}`));
-    obj.shirtColor = userInput;
-    localStorage.setItem(`${key}`, JSON.stringify(obj));
-    // Update DOM:
-    let getObj = JSON.parse(localStorage.getItem(`${key}`));
-    shirtColor.value = getObj.shirtColor;
-  });
+    // Remove HTML validation:
+    if (name && phone) {
+      name.noValidate = true;
+      phone.required = false;
+      name.addEventListener("change", (e) => {
+        // Get user input:
+        let userInput = e.target.value;
+        if (/[^a-zA-Z]/.test(userInput)) {
+          console.log("contains 0 - 9");
+        } else {
+          console.log("its all good");
+        }
+      });
+    }
+  }
+};
 
-  textColor.addEventListener("change", function (e) {
-    // Get user input:
-    let userInput = e.target.value;
-    // Add user input to object in localStorage:
-    let obj = JSON.parse(localStorage.getItem(`${key}`));
-    obj.textColor = userInput;
-    localStorage.setItem(`${key}`, JSON.stringify(obj));
-    // Update DOM:
-    let getObj = JSON.parse(localStorage.getItem(`${key}`));
-    textColor.value = getObj.textColor;
-  });
+// if (designPage && document.querySelector) {
+//   // Getting the elements:
+//   const textInput = document.querySelector("#textInput");
+//   const selectInput = document.querySelector("#color");
+//   const selectInputText = document.querySelector("#textColor");
+//   const shirt = document.querySelector(".shirt");
+//   const paragraph = document.querySelector("#liveInput");
 
-  inputText.addEventListener("change", function (e) {
-    // Get user input:
-    let userInput = e.target.value;
-    // Add user input to object in localStorage:
-    let obj = JSON.parse(localStorage.getItem(`${key}`));
-    obj.inputText = userInput;
-    localStorage.setItem(`${key}`, JSON.stringify(obj));
-    // Update DOM:
-    let getObj = JSON.parse(localStorage.getItem(`${key}`));
-    inputText.value = getObj.inputText;
-    paragraph.innerHTML = getObj.inputText;
-  });
-}
+//   // Adding classes:
+//   paragraph.classList.add("onShirt");
 
-if (cartPage && document.querySelector && localStorage) {
-  const keys = document.querySelectorAll(".keys");
-  const keysList = Array.from(keys);
-  keysList.forEach((input) => {
-    let key = input.value;
-    let obj = JSON.parse(localStorage.getItem(`${key}`));
-    localStorage.removeItem(`${key}`, JSON.stringify(obj));
-  });
-}
+//   // Adding events:
+//   selectInputText.addEventListener("change", (e) => {
+//     let userInput = e.target.value;
+//     removeClasses(["colorBlack", "colorWhite"], paragraph);
+//     checkShirtColor(userInput, paragraph);
+//   });
+
+//   selectInput.addEventListener("change", (e) => {
+//     let userInput = e.target.value;
+//     removeClasses(
+//       ["colorOlive", "colorWhite", "colorBlack", "colorNavy"],
+//       shirt
+//     );
+//     checkShirtColor(userInput, shirt);
+//   });
+
+//   textInput.onkeyup = function () {
+//     paragraph.innerHTML = this.value;
+//   };
+// }
+
+// if (designPage && document.querySelector && localStorage && location) {
+//   // localStorage.clear();
+//   console.log(localStorage);
+//   // Getting the elements:
+//   const shirt = document.querySelector(".shirt");
+//   const paragraph = document.querySelector("#liveInput");
+//   const size = document.querySelector("#size");
+//   const shirtColor = document.querySelector("#color");
+//   const inputText = document.querySelector("#textInput");
+//   const textColor = document.querySelector("#textColor");
+//   const key = location.pathname.replace("/designs/", "");
+
+//   if (localStorage.getItem(`${key}`)) {
+//     console.log("Does exist.");
+//     let retrievedObject = JSON.parse(localStorage.getItem(`${key}`));
+//     size.value = retrievedObject.size;
+//     inputText.value = retrievedObject.inputText;
+//     shirtColor.value = retrievedObject.shirtColor;
+//     textColor.value = retrievedObject.textColor;
+//     checkShirtColor(shirtColor.value, shirt);
+//     checkShirtColor(textColor.value, paragraph);
+//     paragraph.innerHTML = retrievedObject.inputText;
+//   } else {
+//     console.log("Does not exist.");
+//     const object = createObject(
+//       size.value,
+//       shirtColor.value,
+//       inputText.value,
+//       textColor.value
+//     );
+//     // Put the object into storage
+//     localStorage.setItem(`${key}`, JSON.stringify(object));
+//   }
+//   // console.log(localStorage);
+//   // localStorage.clear();
+
+//   // Event listeners:
+//   size.addEventListener("change", function (e) {
+//     // Get user input:
+//     let userInput = e.target.value;
+//     // Add user input to object in localStorage:
+//     let obj = JSON.parse(localStorage.getItem(`${key}`));
+//     obj.size = userInput;
+//     localStorage.setItem(`${key}`, JSON.stringify(obj));
+//     // Update DOM:
+//     let getObj = JSON.parse(localStorage.getItem(`${key}`));
+//     size.value = getObj.size;
+//   });
+
+//   shirtColor.addEventListener("change", function (e) {
+//     // Get user input:
+//     let userInput = e.target.value;
+//     // Add user input to object in localStorage:
+//     let obj = JSON.parse(localStorage.getItem(`${key}`));
+//     obj.shirtColor = userInput;
+//     localStorage.setItem(`${key}`, JSON.stringify(obj));
+//     // Update DOM:
+//     let getObj = JSON.parse(localStorage.getItem(`${key}`));
+//     shirtColor.value = getObj.shirtColor;
+//   });
+
+//   textColor.addEventListener("change", function (e) {
+//     // Get user input:
+//     let userInput = e.target.value;
+//     // Add user input to object in localStorage:
+//     let obj = JSON.parse(localStorage.getItem(`${key}`));
+//     obj.textColor = userInput;
+//     localStorage.setItem(`${key}`, JSON.stringify(obj));
+//     // Update DOM:
+//     let getObj = JSON.parse(localStorage.getItem(`${key}`));
+//     textColor.value = getObj.textColor;
+//   });
+
+//   inputText.addEventListener("change", function (e) {
+//     // Get user input:
+//     let userInput = e.target.value;
+//     // Add user input to object in localStorage:
+//     let obj = JSON.parse(localStorage.getItem(`${key}`));
+//     obj.inputText = userInput;
+//     localStorage.setItem(`${key}`, JSON.stringify(obj));
+//     // Update DOM:
+//     let getObj = JSON.parse(localStorage.getItem(`${key}`));
+//     inputText.value = getObj.inputText;
+//     paragraph.innerHTML = getObj.inputText;
+//   });
+// }
+
+// if (cartPage && document.querySelector && localStorage) {
+//   // Get elements:
+//   const keys = document.querySelectorAll(".keys");
+//   const keysList = Array.from(keys);
+//   const name = document.querySelector("#userName");
+//   const phone = document.querySelector("#userPhone");
+//   const mail = document.querySelector("#userMail");
+
+//   keysList.forEach((input) => {
+//     let key = input.value;
+//     let obj = JSON.parse(localStorage.getItem(`${key}`));
+//     localStorage.removeItem(`${key}`, JSON.stringify(obj));
+//   });
+
+//   // Remove HTML validation:
+//   name.noValidate = true;
+//   phone.required = false;
+//   name.addEventListener("change", (e) => {
+//     // Get user input:
+//     let userInput = e.target.value;
+//     if (/[^a-zA-Z]/.test(userInput)) {
+//       console.log("contains 0 - 9");
+//     } else {
+//       console.log("its all good");
+//     }
+//     // if (userInput.includes("[0-9]")) {
+//     //   console.log("test");
+//     // } else {
+//     //   console.log("nope");
+//     // }
+//     // console.log(userInput);
+//   });
+// }
 
 // Creates a new object:
 function createObject(size, shirtColor, inputText, textColor) {
@@ -161,3 +320,5 @@ function removeClasses(arrayList, element) {
     element.classList.remove(item);
   });
 }
+
+init();
