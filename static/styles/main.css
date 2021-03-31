@@ -60,6 +60,10 @@ body > header nav ul li a {
   height: 100%;
 }
 
+body > header nav ul li a:focus {
+  border: 4px solid hotpink;
+}
+
 /* Don't support Opera 10-11.5 & Opera Mobile 12:   */
 body > header nav ul {
   display: flex;
@@ -107,6 +111,15 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+button:focus,
+select:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+input[type="submit"]:focus {
+  border: 4px solid hotpink;
+}
+
 footer {
   background-color: white;
   border-top: solid 1px #d0d1d3;
@@ -115,7 +128,7 @@ footer {
   padding: 0.5em 5vw;
 }
 
-footer section {
+footer div {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -123,11 +136,19 @@ footer section {
   height: 100%;
 }
 
-footer section p {
+@supports (display: grid) {
+  footer div {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+  }
+}
+
+footer div p {
   text-align: center;
 }
 
-footer section p a {
+footer div p a {
   text-decoration: none;
   color: black;
   padding: 5px;
@@ -135,11 +156,15 @@ footer section p a {
   height: 30px;
 }
 
-footer section p a:hover {
+footer div p a:hover {
   color: #3e23e5;
 }
 
-footer section p a:hover::after {
+footer div p a:focus {
+  border: 4px solid hotpink;
+}
+
+footer div p a:hover::after {
   content: "";
   display: block;
   border-bottom: 2px solid #3e23e5;
@@ -348,12 +373,6 @@ body main section h2 {
 }
 
 @media (min-width: 480px) {
-  .designs main section ul li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
   .designs main section ul li a article svg,
   .designs main section ul li:last-child svg {
     height: 402px;
