@@ -97,18 +97,10 @@ In the pleasurable layer, the user experience is the **best experience you can e
 
 ## :wavy_dash: Flow
 
-First, a simple sketch has been made to visually visualize what the most important happy flow of the user would be.
+A simple sketch has been made to visualize what the flow of the user would be.
 
 <details style="margin: 1em 0;">
-  <summary style="margin: 1em 0;">Simple flow sketch</summary>
-
-<img width="600" alt="Drawn flow of the application." src="https://user-images.githubusercontent.com/35265583/112224970-5d7f3700-8c2c-11eb-9b55-4034a6f8f9c0.jpg">
-</details>
-
-Later an improved sketch was made showing the perfect flow:
-
-<details style="margin: 1em 0;">
-  <summary style="margin: 1em 0;">Perfect flow sketch</summary>
+  <summary style="margin: 1em 0;">Flow sketch</summary>
 
 <img width="600" alt="Drawn flow of the application." src="https://user-images.githubusercontent.com/35265583/112224970-5d7f3700-8c2c-11eb-9b55-4034a6f8f9c0.jpg">
 </details>
