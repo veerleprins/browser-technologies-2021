@@ -360,40 +360,27 @@ The sources I've used to create this application:
 - MDN. (2021a, februari 19). Array.from() - JavaScript | MDN. MDN Docs. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
 - fsymbols. (z.d.). ♡ ♥💕❤😘 Heart Symbol - copy love emoji. Geraadpleegd op 29 maart 2021, van https://fsymbols.com/heart/#apple
 - Copes, F. (2019, 27 mei). How to uppercase the first letter of a string in JavaScript. Flaviocopes. https://flaviocopes.com/how-to-uppercase-first-letter-javascript/
-
-- <!--
-  https://www.youtube.com/watch?v=k8yJCeuP6I8&t=371s
-  https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_oninput
-  https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection
-  https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API
-  https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
-  https://stackoverflow.com/questions/4230375/whats-the-easiest-way-to-remove-fieldset-border-lines/4230381
-  https://css-tricks.com/accessible-svgs/
-  https://stackoverflow.com/questions/2918707/turn-off-iphone-safari-input-element-rounding
-  https://css-tricks.com/separate-form-submit-buttons-go-different-urls/
-  https://www.w3schools.com/tags/att_input_type_hidden.asp
-   -->
+- W3Schools. (z.d.). HTML input type="hidden". W3Schools Tutorials. https://www.w3schools.com/tags/att_input_type_hidden.asp
+- Can I use. . . Support tables for HTML5, CSS3, etc. (2021, 27 februari). Can I Use. . .? https://caniuse.com/
+- Migliorisi, H. (2016, 28 augustus). Accessible SVGs. CSS-Tricks. https://css-tricks.com/accessible-svgs/
+- StackOverflow. (2010, 27 mei). Turn off iPhone/Safari input element rounding. https://stackoverflow.com/questions/2918707/turn-off-iphone-safari-input-element-rounding
+- MDN. (2021, 19 februari). Window.localStorage - Web APIs | MDN. MDN Docs. https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 
 ### Backend code:
-
-#### Packages:
 
 - express-ejs-layouts (2.5.0). (2018). [Layout support for ejs in express.]. npmjs. https://www.npmjs.com/package/express-ejs-layouts
 - express (4.17.1). (2019). [Fast, unopinionated, minimalist web framework for node.]. npmjs. https://www.npmjs.com/package/express
 - ejs (3.1.6). (2021). [Embedded JavaScript template ejs.]. npmjs. https://www.npmjs.com/package/ejs
 - body-parser (1.19.0). (2019). [Parse incoming request bodies in a middleware before your handlers, available under the req.body property.]. npmjs. https://www.npmjs.com/package/body-parser
 - nodemon (2.0.7). (2021). [Nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.]. npmjs. https://www.npmjs.com/package/nodemon
-
-#### Saving data:
-
 - The Coding Train. (2016, 18 november). 8.5: Saving Data to JSON File with Node.js - Programming with Text [Video]. YouTube. https://www.youtube.com/watch?v=6iZiqQZBQJY
+- Coyier, C. (2017, 2 augustus). Separate Form Submit Buttons That Go To Different URLs. CSS-Tricks. https://css-tricks.com/separate-form-submit-buttons-go-different-urls/
 
 ## :lock: License
 
 This repo is licensed as [MIT](https://github.com/veerleprins/browser-technologies-2021/blob/master/LICENSE) by :copyright: [Veerle Prins](https://github.com/veerleprins), 2020
 
 <!--
-https://www.freecodecamp.org/news/check-if-javascript-array-is-empty-or-not-with-length/#:~:text=To%20check%20if%20an%20array,it%20is%20empty%20or%20not.
 
 https://github.com/cmda-minor-web/browser-technologies-2021/blob/master/course/Eindopdracht.md#criteria
  -->
